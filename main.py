@@ -69,20 +69,21 @@ if __name__ == '__main__':
 # Attempt write to PDF file
 #
 
-myfile = PdfFileReader("F:\\NameGender.pdf")
+myfile = PdfFileReader("C:\\TEMP\\Biology Lab Form 01.pdf")
 first_page = myfile.getPage(0)
 
 writer = PdfFileWriter()
 set_need_appearances_writer(writer)
 
 data_dict = {
-            'txtName': 'Hi Dave'
+            'txtPIName': 'Annalisa Scimemi',
+            'txtPIOffice': 'BIO 329'
             }
 
 writer.updatePageFormFieldValues(first_page, fields=data_dict)
 writer.addPage(first_page)
 
-with open("f:\\newfile.pdf","wb") as new:
+with open("c:\\temp\\newfile.pdf","wb") as new:
     writer.write(new)
 
 #
